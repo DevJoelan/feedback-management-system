@@ -19,11 +19,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 20
 
       - name: Install dependencies
         working-directory: ./websocket-service
-        run: npm ci
+        run: npm ci --force ## --force is used to bypass eslint dependency issues
 
       - name: Build
         working-directory: ./websocket-service
