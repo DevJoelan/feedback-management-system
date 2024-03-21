@@ -21,14 +21,14 @@ jobs:
         with:
           node-version: 14
 
-      - name: Checkin to websocket-service
-        run: cd ./websocket-service
-
       - name: Install dependencies
+        working-directory: ./websocket-service
         run: npm ci
 
       - name: Build
+        working-directory: ./websocket-service
         run: npm run build
         
       - name: Run linter
+        working-directory: ./websocket-service
         run: npm run lint
